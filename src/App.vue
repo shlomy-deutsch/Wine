@@ -11,7 +11,6 @@
       <button @click="calculateTotalInvesting">סכום הכסף שהושקע</button>
       <button @click="calculateProfit">ממוצע רווחים שנתי</button>
     </div>
-  <span>{{ this.$store.state.count }}</span>
     <MyTable></MyTable>
   </div>
 </template>
