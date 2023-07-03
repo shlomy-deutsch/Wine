@@ -27,14 +27,20 @@ export default {
   methods: {
     BrandSearch() {
       axios
-        .get("http://localhost:3000/api/products/brand/" + this.brandSearch)
+        .get(
+          "https://salomon-wine-64bcf32bff86.herokuapp.com/api/products/brand/" +
+            this.brandSearch
+        )
         .then((response) => {
           this.items = response.data;
         });
     },
     VarietySearch() {
       axios
-        .get("http://localhost:3000/api/products/variety/" + this.varietySearch)
+        .get(
+          "https://salomon-wine-64bcf32bff86.herokuapp.com/api/products/variety/" +
+            this.varietySearch
+        )
         .then((response) => {
           this.items = response.data;
         });
