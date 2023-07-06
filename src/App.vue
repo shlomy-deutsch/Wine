@@ -115,6 +115,9 @@ export default {
 .form table {
   height: 67px;
 }
+h1{
+  color: black;
+}
 .search {
   border-width: 1px;
   border-style: solid;

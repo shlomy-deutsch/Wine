@@ -217,6 +217,7 @@ table {
   width: 100%;
   background-color: white;
   direction: rtl;
+  color: black;
 }
 th {
   border-width: 1px;
