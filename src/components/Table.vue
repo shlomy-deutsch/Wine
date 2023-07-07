@@ -159,19 +159,20 @@ import axios from "axios";
 
 export default {
   name: "My-Table",
+  props: ['items'],
   data() {
     return {
-      items: [],
+      // items: [],
       activeIndex: -1,
       bool: true,
     };
   },
   mounted() {
-    axios
-      .get("https://salomon-wine-64bcf32bff86.herokuapp.com/api/products")
-      .then((response) => {
-        this.items = response.data;
-      });
+    // axios
+    //   .get("https://salomon-wine-64bcf32bff86.herokuapp.com/api/products")
+    //   .then((response) => {
+    //     this.items = response.data;
+    //   });
   },
   methods: {
     slicedDate(date) {

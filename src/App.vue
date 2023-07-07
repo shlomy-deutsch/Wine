@@ -11,11 +11,12 @@
       <button @click="calculateTotalInvesting">סכום הכסף שהושקע</button>
       <button @click="calculateProfit">ממוצע רווחים שנתי</button>
     </div>
-    <MyTable></MyTable>
+    <MyTable :items="items"></MyTable>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import search from "./components/search.vue";
 import AddProduct from "./components/Add-Product.vue";
 import MyTable from "./components/Table.vue";
@@ -55,7 +56,13 @@ export default {
       // return this.$store.state.count   
     }
   },
-
+  mounted() {
+    axios
+      .get("https://salomon-wine-64bcf32bff86.herokuapp.com/api/products")
+      .then((response) => {
+        this.items = response.data;
+      });
+  },
   methods: {
 
     calculateTotalValue() {
