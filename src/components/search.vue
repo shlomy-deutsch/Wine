@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   name: "Search",
   data() {
@@ -26,24 +25,11 @@ export default {
   },
   methods: {
     BrandSearch() {
-      axios
-        .get(
-          "https://salomon-wine-64bcf32bff86.herokuapp.com/api/products/brand/" +
-            this.brandSearch
-        )
-        .then((response) => {
-          this.items = response.data;
-        });
+      this.$emit("BrandSearch", this.brandSearch);
+
     },
     VarietySearch() {
-      axios
-        .get(
-          "https://salomon-wine-64bcf32bff86.herokuapp.com/api/products/variety/" +
-            this.varietySearch
-        )
-        .then((response) => {
-          this.items = response.data;
-        });
+      this.$emit("VarietySearch", this.varietySearch);
     },
   },
 };

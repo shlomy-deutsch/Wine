@@ -2,7 +2,7 @@
   <div>
     <div class="header">
       <h1>אתר הניהול של זלמי ושמואל</h1>
-      <search></search>
+      <search @BrandSearch="BrandSearch" @VarietySearch="VarietySearch"></search>
       <AddProduct></AddProduct>
     </div>
  
@@ -11,7 +11,7 @@
       <button @click="calculateTotalInvesting">סכום הכסף שהושקע</button>
       <button @click="calculateProfit">ממוצע רווחים שנתי</button>
     </div>
-    <MyTable :items="items"></MyTable>
+    <MyTable :items="prod"></MyTable>
   </div>
 </template>
 
@@ -53,7 +53,7 @@ export default {
   },
   computed:{
     prod(){
-      // return this.$store.state.count   
+      return this.items  
     }
   },
   mounted() {
@@ -113,7 +113,26 @@ export default {
       const y = t / count;
       alert(y);
     },
-  
+    BrandSearch(val) {
+      axios
+        .get(
+          "https://salomon-wine-64bcf32bff86.herokuapp.com/api/products/brand/" +
+            val
+        )
+        .then((response) => {
+          this.items = response.data;
+        });
+    },
+    VarietySearch(val) {
+      axios
+        .get(
+          "https://salomon-wine-64bcf32bff86.herokuapp.com/api/products/variety/" +
+            val
+        )
+        .then((response) => {
+          this.items = response.data;
+        });
+    },
   },
 };
 </script>
