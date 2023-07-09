@@ -1,16 +1,17 @@
 <template>
   <div>
-    <form @submit="CreatePost">
-      <input type="text" placeholder="מותג" v-model="formValues.Brand" />
+    <form @submit="CreatePost" class="container">
+     <input type="text" class="aks-input" placeholder="מותג" v-model="formValues.Brand" /> 
       <input type="text" placeholder="זן ענבים" v-model="formValues.Variety" />
-      <input type="number" placeholder="שנה" v-model="formValues.Year" />
+      <input type="number" placeholder="שנה" v-model="formValues.Year" style="width: 70px;"/>
       <label for="">תאריך רכישה:</label>
+      <br>
       <input
         type="Date"
         placeholder="תאריך רכישה"
         v-model="formValues.Date_purchase"
       />
-      <input type="number" placeholder="כמות" v-model="formValues.Count" />
+      <input type="number" placeholder="כמות" v-model="formValues.Count" style="width: 70px;"/>
       <input
         type="number"
         placeholder="מחיר רכישה"
@@ -27,7 +28,7 @@
         v-model="formValues.Date_selling"
       />
       <label for="">:תאריך מכירה</label>
-      <input type="number" placeholder="שווי כיום" v-model="formValues.Value" />
+      <input type="number" placeholder="שווי כיום" v-model="formValues.Value" style="width: 90px"/>
       <input
         type="text"
         placeholder="שם המוכר"
@@ -36,7 +37,7 @@
       <input type="text" placeholder="מיקום" v-model="formValues.Position" />
 
       <select v-model="formValues.Investor">
-        <option disabled value="">שם המשקיע</option>
+        <option disabled value="">המשקיע</option>
         <option value="זלמי">זלמי</option>
         <option value="שמואל">שמואל</option>
       </select>
@@ -109,4 +110,53 @@ export default {
 
 <style scoped>
 label{color: black;}
+input, select{
+font-size: 14px;
+                border-radius: 6px;
+                line-height: 1.5;
+                padding: 5px 10px;
+                transition: box-shadow 100ms ease-in, border 100ms ease-in, background-color 100ms ease-in;
+                border: 2px solid #dee1e2;
+                color: rgb(178, 57, 154);
+                background: #e6aee2;
+                display: block;
+                height: 30px;
+                width: 100px;
+                /* :hover {
+                    border-color: #ccc;
+                }; */
+                /* :focus{
+                    border-color: #9147ff;
+                    background: #fff;
+                } */
+              }
+              .container{
+                width: 39%;
+
+  display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-start;
+    margin: auto;
+
+}
+button{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: inline-block;
+                    outline: 0;
+                    border: 0;
+                    cursor: pointer;
+                    background-color: #df46ee;
+                    border-radius: 50px;
+                    padding: 2px 10px;
+    font-size: 12px;
+                    font-weight: 700;
+                    color: white;
+                    line-height: 26px;
+                    margin: auto;
+    margin-bottom: 6px;
+    margin-top: 2px;
+}
 </style>

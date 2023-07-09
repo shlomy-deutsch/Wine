@@ -70,7 +70,7 @@
                       @input="formValues.Year = $event.target.value"
                     />
                     <br />
-                    <label for="">כמות</label>
+                    <label for="">כמות:</label>
                     <input
                       :value="i.Count"
                       type="number"
@@ -162,17 +162,9 @@ export default {
   props: ['items'],
   data() {
     return {
-      // items: [],
       activeIndex: -1,
-      bool: true,
+      bool: false,
     };
-  },
-  mounted() {
-    // axios
-    //   .get("https://salomon-wine-64bcf32bff86.herokuapp.com/api/products")
-    //   .then((response) => {
-    //     this.items = response.data;
-    //   });
   },
   methods: {
     slicedDate(date) {
@@ -230,5 +222,23 @@ td {
   border-width: 1px;
   border-style: solid;
   text-align: -webkit-center;
+}
+input, select{
+width: 80px;
+}
+button{
+  
+  display: inline-block;
+                    outline: 0;
+                    border: 0;
+                    cursor: pointer;
+                    background-color: #df46ee;
+                    border-radius: 50px;
+                    padding: 2px 10px;
+    font-size: 12px;
+                    font-weight: 700;
+                    color: white;
+                    line-height: 26px;
+                
 }
 </style>

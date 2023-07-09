@@ -138,6 +138,10 @@ export default {
 </script>
 
 <style scoped>
+.btns{    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .form table {
   height: 67px;
 }
@@ -151,10 +155,25 @@ h1{
   width: 19%;
   margin: auto;
 }
-.header {
-  margin-left: 35%;
+h1{display: flex;
+    justify-content: center;
+  
+    color: #8675e8;
 }
-.btns {
-  margin-left: 33%;
+
+button{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: inline-block;
+                    outline: 0;
+                    border: 0;
+                    cursor: pointer;
+                    background-color: #4299e1;
+                    border-radius: 50px;
+                    padding: 2px 10px;
+    font-size: 12px;
+                    font-weight: 700;
+                    color: white;
+                    line-height: 26px;
+                
 }
 </style>
